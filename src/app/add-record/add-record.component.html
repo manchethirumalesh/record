@@ -1,0 +1,40 @@
+<form class="form" [formGroup]="add" >
+        <div class="Roll-No-field">
+            <label for="">Student Roll No</label>
+            <input type="text" placeholder="Enter Roll No" formControlName="roll">
+        </div>
+        <div class="name-field">
+            <label for="">Student Name</label>
+            <input type="text" placeholder="Enter Full Name" formControlName="name">
+        </div>
+        <div class="marks-field">
+            <label for="">Marks in Maths</label>
+            <input type="number"  placeholder="Enter Maths Marks" formControlName="maths">
+        </div>
+        <div class="marks-field">
+            <label for="">Marks in Physics</label>
+            <input type="number"  placeholder="Enter Physics Marks" formControlName="physics">
+        </div>
+        <div class="marks-field">
+            <label for="">Marks in Chemistry</label>
+            <input type="number"  placeholder="Enter Chemistry Marks" formControlName="chemistry">
+        </div>
+        <div class="marks-field">
+            <label for="">Total Marks</label>
+            <p>{{marks}}</p>
+        </div>
+        <div class="marks-field">
+            <label for="">Percentage</label>
+            <p>{{per  | number : '1.2-2'}}</p>
+        </div>
+        
+        <section class="button">
+            <button type="button" (click)="addrecord()" [disabled]="!add.valid" class="btn btn-primary">submit</button>
+            <button type="button"  (click)="reset(add)" class="btn btn-info">reset</button>
+            <button type="button" routerLink="/" class="btn btn-danger">cancel</button>
+        </section>
+</form>
+
+    
+
+    

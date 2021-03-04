@@ -1,0 +1,31 @@
+<table class="table table-hover table-borderless" >
+    <thead style="background-color:whitesmoke;position: fixed;padding-top: 50px;top: 80px;" >
+      <tr >
+        <th class="d-flex" style="background-color: violet;width: 92px;">Roll No</th>
+        <th style="background-color: rgba(206, 44, 138, 0.637);width: 277px;">Name</th>
+        <th style="background-color: rgb(130, 234, 238);width: 123px;">Maths</th>
+        <th style="background-color: rgb(74, 117, 207);width: 123px;">Physics</th>
+        <th style="background-color: rgb(179, 238, 130);width: 123px;">Chemistry</th>
+        <th style="background-color: rgb(218, 180, 218);width: 124px;">Total Marks</th>
+        <th style="background-color: rgb(112, 113, 172);width: 124px;">Percentage</th>
+        <th style="background-color: rgb(187, 45, 97);width: 124px;">Rank</th>
+      </tr>
+    </thead>
+</table>   
+
+<table class="table table-hover table-borderless" style="margin-top: 47px;">
+    <tbody >
+      <tr *ngFor = "let items of studentList">
+        <td style="width: 90px;" >{{items.roll_no}}</td>
+        <td style="width: 270px;">{{items.student_name}}</td>
+        <td style="width: 120px;">{{items.maths_marks}}</td>
+        <td style="width: 120px;">{{items.physics_marks}}</td>
+        <td style="width: 120px;">{{items.chemistry_marks}}</td>
+        <td style="width: 120px;">{{items.total_Marks}}</td>
+        <td style="width: 120px;">{{items.percentage}}</td>
+        <td style="width: 120px;">1</td>
+      </tr>
+    </tbody>
+</table>
+  <br>
+  <br>
