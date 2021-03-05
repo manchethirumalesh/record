@@ -12,6 +12,8 @@ export class DisplayRecordComponent implements OnInit {
   studentrollnoFilter:Number | undefined
   studentListwithoutFilter:any = []
 
+  total_Records : number | undefined
+
   student_Name:string=""
   Roll: any;
 
@@ -25,71 +27,38 @@ export class DisplayRecordComponent implements OnInit {
     this.service.getstudentlist().subscribe((data)=>{
       this.studentList=data;
       this.studentListwithoutFilter=data
+      this.total_Records = this.studentList.length
     })
   }
 
-   search(){
-//     // var studentrollnoFilter = this.studentrollnoFilter
-//     // this.studentList= this.studentListwithoutFilter.filter(function (el:any){
-//     //   return el.roll_no.toString().toLowerCase().include(
-//     //     studentrollnoFilter.toString().trim().toLowerCase()
-//     //   )
-//     // })
-
+  search(){
     if(this.student_Name!==""){
           this.studentList = this.studentListwithoutFilter.filter((res: { student_name: string; }) =>{
-                return res.student_name.toLowerCase().match(this.student_Name.toLowerCase())
-              })
-
-              this.Roll=""
+          return res.student_name.toLowerCase().match(this.student_Name.toLowerCase())
+        })
+        this.Roll=""
     }else if(this.student_Name == ""){
       this.ngOnInit()
     }
-
-// //     if(this.Roll!== undefined){
-// //       this.studentList = this.studentListwithoutFilter.filter((res: { roll_no: number; }) =>{
-// //             return res.roll_no.toString(this.Roll)
-// //           })
-// // }else if(this.student_Name == undefined){
-// //   this.ngOnInit()
-// // }
-//     //  if(this.student_Name!==null){
-//     //       this.studentList = this.studentListwithoutFilter.filter((res: { roll_no: number; }) =>{
-//     //             return this.student_Name
-//     //           })
-//     // }else if(this.student_Name == null){
-//     //   this.ngOnInit()
-//     // }
- console.log(this.studentList)
-}
+      console.log(this.studentList.length)
+  }
 
   ser(){
-
     if(this.Roll!== null){
        this.studentList = this.studentListwithoutFilter.filter((res: { roll_no: number; }) =>
         res.roll_no == this.Roll);
         this.student_Name =""
     }else if(this.Roll == null){
       this.ngOnInit()
-
     }
-
-   
-   console.log(this.studentList)   
-
+    console.log(this.studentList)   
   }
 
-
-  // search1(){
-  //   if(this.Roll!== undefined){
-  //            this.studentList = this.studentListwithoutFilter.filter((res: { roll_no: any; }) =>{
-  //                  return res.roll_no.
-  //            })
-  //      }else if(this.student_Name == undefined){
-  //        this.ngOnInit()
-  //      }
-  // }
-
+  cancel(){
+    this.Roll=""
+    this.student_Name =""
+    this.ngOnInit()
+  }
 
   sorts(prop: any,asc: any){
     this.studentList = this.studentListwithoutFilter.sort(function(a: { [x: string]: number; },b: { [x: string]: number; }){
@@ -97,7 +66,6 @@ export class DisplayRecordComponent implements OnInit {
         return(a[prop]>b[prop])?1 : ((a[prop]<b[prop])? -1 :0);
       }else{
         return(b[prop]>a[prop])?1 : ((b[prop]<a[prop])? -1 :0);
-
       }
     })
   }
