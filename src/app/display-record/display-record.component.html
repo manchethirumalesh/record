@@ -1,4 +1,4 @@
-<table class="table table-hover table-borderless" >
+<!-- <table class="table table-hover table-borderless" >
     <thead style="background-color:whitesmoke;position: fixed;padding-top: 50px;top: 80px;" >
       <tr >
         <th class="d-flex" style="background-color: violet;width: 92px;">Roll No</th>
@@ -28,4 +28,214 @@
     </tbody>
 </table>
   <br>
-  <br>
+  <br> -->
+
+  <div style="position: absolute;margin-left: 15px;">
+<!-- 
+  <table class="table table-hover table-borderless">
+    <thead style="background-color:whitesmoke;position: fixed;padding-top: 50px;top: 80px;" >
+      <tr>
+        <th scope="col" style="background-color: violet;width: 120px;">Roll No
+          
+            <span style="cursor: pointer;" (click)="sorts('roll_no', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+            <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('roll_no', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+          
+        </th>
+        <th scope="col" style="background-color: rgba(206, 44, 138, 0.637);width: 250px;">Name
+          <span style="cursor: pointer;" (click)="sorts('student_name', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('student_name', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(130, 234, 238);width: 155px;">Maths
+          <span style="cursor: pointer;" (click)="sorts('maths_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('maths_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(74, 117, 207);width: 155px;">Physics
+          <span style="cursor: pointer;" (click)="sorts('physics_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('physics_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(179, 238, 130);width: 155px;">Chemistry
+          <span style="cursor: pointer;" (click)="sorts('chemistry_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('chemistry_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col"  style="background-color: rgb(218, 180, 218);width: 155px;">Total Marks
+          <span style="cursor: pointer;" (click)="sorts('total_Marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('total_Marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(112, 113, 172);width: 155px;">Percentage
+          <span style="cursor: pointer;" (click)="sorts('percentage', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('percentage', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(187, 45, 97);width: 155px;">Rank
+          <span style="cursor: pointer;" (click)="sorts('roll_no', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('roll_no', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+
+      </tr>
+    </thead>
+  </table> -->
+
+
+  
+
+
+  
+  <table class="table table-borderless">
+    <thead style="background-color:whitesmoke;position: fixed;padding-top: 50px;top: 80px;border-radius: 10px;" >
+    
+      <tr style="width: 100%;display: flex;justify-content:flex-end;background-color: rgba(255, 255, 255, 0.644);margin-bottom: 10px;border-radius: 10px;" >
+         <div style="padding: 15px  ;display: flex;justify-content: center;
+         align-items: center;">
+          <div>          
+              <input type="text" [(ngModel)]="student_Name"(input)="search()" 
+              style="padding: 8px 15px  ;border-radius: 5px;outline-style: none;margin-right: 15px ; border:none;background-color: rgba(201, 198, 198, 0.349);
+              " placeholder=" search by name" >
+
+              <input type="number" [(ngModel)]="Roll" (keyup.enter)="ser()" 
+              style="padding: 8px 15px  ;border-radius: 5px;outline-style: none;border:none;background-color: rgba(201, 198, 198, 0.349);
+              " placeholder=" search by roll no" >
+
+              
+            </div>
+
+            <!-- <div style="margin-left: 5px;">          
+                  <button (click)="search()" class="btn btn-info" style="padding: 5px 20px;" >search</button> 
+            </div> -->
+         </div>
+      </tr>
+      
+
+     
+    
+      <tr style="background-color: rgba(185, 199, 214, 0.705);border-radius: 10px;">
+        <th scope="col" style="width: 135px;">
+          
+          <!-- <div>
+            <input type="number" [(ngModel)]="studentrollnoFilter"
+            (keyup)="filterfn()"
+            >
+          </div>
+           -->
+          Roll No
+          
+            <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('roll_no', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+            <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('roll_no', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="width: 220px;">
+          
+          <!-- <div>
+            <input type="text" [(ngModel)]="student_Name"
+              (keyup.enter)="search()"
+            >
+          </div> -->
+
+          Name
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('student_name', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('student_name', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+
+        
+        </th>
+        <th scope="col" style="width: 160px;">Maths
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('maths_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('maths_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="width: 160px;">Physics
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('physics_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('physics_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="width: 160px;">Chemistry
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('chemistry_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('chemistry_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col"  style="width: 160px;">Total Marks
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('total_Marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('total_Marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="width: 160px;">Percentage
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('percentage', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('percentage', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="width: 130px;border: none;">Rank
+          <span style="cursor: pointer;margin-left: 6px;" (click)="sorts('roll_no', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('roll_no', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+
+      </tr>
+    </thead>
+  </table>
+
+
+
+
+  <table class="table table-hover table-borderless tb" style="margin-top: 130px;">
+    <!-- <thead >
+      <tr>
+        <th scope="col" style="background-color: violet;">Roll No
+          
+            <span style="cursor: pointer;" (click)="sorts('roll_no', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+            <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('roll_no', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+          
+        </th>
+        <th scope="col" style="background-color: rgba(206, 44, 138, 0.637);">Name
+          <span style="cursor: pointer;" (click)="sorts('student_name', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('student_name', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(130, 234, 238);">Maths
+          <span style="cursor: pointer;" (click)="sorts('maths_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('maths_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(74, 117, 207);">Physics
+          <span style="cursor: pointer;" (click)="sorts('physics_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('physics_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(179, 238, 130);">Chemistry
+          <span style="cursor: pointer;" (click)="sorts('chemistry_marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('chemistry_marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col"  style="background-color: rgb(218, 180, 218);">Total Marks
+          <span style="cursor: pointer;" (click)="sorts('total_Marks', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('total_Marks', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(112, 113, 172);">Percentage
+          <span style="cursor: pointer;" (click)="sorts('percentage', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('percentage', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+        <th scope="col" style="background-color: rgb(187, 45, 97);">Rank
+          <span style="cursor: pointer;" (click)="sorts('roll_no', true)" ><i class="bi bi-arrow-up-square-fill"></i></span>
+          <span style="cursor: pointer;margin-left: 3px;" (click)="sorts('roll_no', false)" ><i class="bi bi-arrow-down-square-fill"></i></span>
+        </th>
+
+      </tr>
+    </thead> -->
+    <!-- <tbody>
+      <tr  *ngFor = "let items of studentList">
+        <td  scope="col">{{items.roll_no}}</td>
+        <td  scope="col">{{items.student_name}}</td>
+        <td  scope="col">{{items.maths_marks}}</td>
+        <td  scope="col">{{items.physics_marks}}</td>
+        <td  scope="col">{{items.chemistry_marks}}</td>
+        <td  scope="col">{{items.total_Marks}}</td>
+        <td  scope="col">{{items.percentage | number : '1.2-2' }}</td>
+        <td  scope="col">@Rank</td>
+
+      </tr>
+     
+    </tbody>
+   -->
+
+   <tbody >
+    <tr *ngFor = "let items of studentList">
+      <td style="width: 135px;padding-left: 20px;" >{{items.roll_no}}</td>
+      <td style="width: 220px;">{{items.student_name | titlecase}}</td>
+      <td style="width: 160px;padding-left: 20px;">{{items.maths_marks}}</td>
+      <td style="width: 160px;padding-left: 20px;">{{items.physics_marks}}</td>
+      <td style="width: 160px;padding-left: 20px;">{{items.chemistry_marks}}</td>
+      <td style="width: 160px;padding-left: 20px;">{{items.total_Marks}}</td>
+      <td style="width: 160px;padding-left: 20px;">{{items.percentage | number : '1.2-2'}}</td>
+      <td style="width: 130px;padding-left: 30px;">@Rank</td>
+    </tr>
+  </tbody>
+
+
+  </table>
+
+  </div>
